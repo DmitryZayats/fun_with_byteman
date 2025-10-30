@@ -22,14 +22,6 @@ This writeup assumes using JDK17 from openlogic and all operations will be done 
   unzip byteman-download-4.0.25-bin.zip
   ```
 
-- Create byteman_sourceme_jdk17.sh file with the following content
-
-  ```
-  export BYTEMAN_HOME=~/fun_with_byteman/byteman-download-4.0.25
-  export JAVA_HOME=~/fun_with_byteman/openlogic-openjdk-17.0.14+7-linux-x64
-  export PATH=$PATH:$BYTEMAN_HOME/bin:$JAVA_HOME/bin
-  ```
-
 - Source file
 
   ```
