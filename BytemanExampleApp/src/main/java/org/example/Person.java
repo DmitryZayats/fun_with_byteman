@@ -1,3 +1,4 @@
+package org.example;
 public class Person {
     int Age;
     String FirstName;
