@@ -1,0 +1,11 @@
+RULE TraceTempFile
+CLASS Main
+METHOD deleteFile
+AFTER WRITE $file
+BIND fh=new Object();
+IF true
+DO traceOpen(fh,"/tmp/trace_temp_file.log");
+   traceln(fh,"Temp file name is : " + $file);
+   traceClose(fh);
+ENDRULE
+

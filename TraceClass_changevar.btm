@@ -1,0 +1,9 @@
+RULE TraceTempFile
+CLASS Person
+METHOD changeLastName
+AT ENTRY
+IF true
+DO 
+  $newLastName = "Shepilov";
+ENDRULE
+

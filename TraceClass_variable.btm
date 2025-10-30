@@ -1,0 +1,11 @@
+RULE TraceTempFile
+CLASS Main
+METHOD changeLastName
+AT EXIT
+BIND fh=new Object();
+IF true
+DO traceOpen(fh,"/tmp/trace_temp_file.log");
+   traceln(fh,"Last Name is : " + $!.LastName);
+   traceClose(fh);
+ENDRULE
+
