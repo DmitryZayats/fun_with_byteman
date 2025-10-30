@@ -28,17 +28,17 @@ This writeup assumes using JDK17 from openlogic and all operations will be done 
   source byteman_sourceme_jdk17.sh
   ```
 
-- Compile classes
+- Build test application jar with maven
+  
+  ```
+  cd BytemanExampleApp
+  mvn package
+  ```
+
+- Run Application
 
   ```
-  javac Main.java
-  javac Person.java
-  ```
-
-- Run Main class
-
-  ```
-  java Main
+  java -jar target/BytemanExampleApp-1.0-SNAPSHOT-jar-with-dependencies.jar
   ```
 
 - Load byteman agent into running JVM and experiment with byteman rules
@@ -52,7 +52,7 @@ This writeup assumes using JDK17 from openlogic and all operations will be done 
   - Find pid of the jvm running our Main class
 
     ```
-    ps -ef | grep java | grep Main | awk '{print $2}'
+    ps -ef | grep java | grep BytemanExample | awk '{print $2}'
     ```
 
   - Install byteman agent into PID of running JVM
@@ -68,5 +68,7 @@ This writeup assumes using JDK17 from openlogic and all operations will be done 
     ```
     bmsubmit.sh -u
     ```
+
+  - Try loading / unloading other rules and understand what's happening with the test application
 
 
